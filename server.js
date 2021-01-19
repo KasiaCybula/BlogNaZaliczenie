@@ -16,3 +16,4 @@ mongoose.connect(uri, {
 
 const connection = mongoose.connection;
 connection.once("open", () => console.log("Udało się połączyć z Mongoose."));
+//abc
