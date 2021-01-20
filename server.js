@@ -2,17 +2,22 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 
+require("dotenv").config();
+
 const app = express();
 const port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(express.json());
 
-const uli = process.env.ATLAS_URI;
+const uri = process.env.ATLAS_URI;
 
 mongoose.connect(uri, {
-  userNewUrlParser: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 });
 
 const connection = mongoose.connection;
-connection.once("open", () => console.log("Udało się połączyć z Mongoose."));
+connection.once("open", () => console.log("Udało się połączyć z MongoDB."));
+
+app.listen(port, () => console.log("Aplikacja dziala na porcie: ${port}"));
