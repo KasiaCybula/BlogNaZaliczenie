@@ -20,4 +20,8 @@ mongoose.connect(uri, {
 const connection = mongoose.connection;
 connection.once("open", () => console.log("Udało się połączyć z MongoDB."));
 
+const articleRouter = require("./routes/articles");
+
+app.use("/articles", articleRouter);
+
 app.listen(port, () => console.log("Aplikacja dziala na porcie: ${port}"));
