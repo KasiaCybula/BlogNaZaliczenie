@@ -21,6 +21,8 @@ Add more general information about project. What the purpose of the project is? 
 * Bootstrap - version 4.4.1
 * Express - version 4.17.1
 * MongoDB Atlas - version 4.4.3
+* Axios
+* Style-component
 
 ## Features
 * Article add function
