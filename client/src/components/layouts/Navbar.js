@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 import logo from "../../logo1.png";
 
 const Navbar = () => {
@@ -7,9 +8,9 @@ const Navbar = () => {
     <NavbarContainer>
       <nav className="navbar navbar-expand-lg navbar-light px-5 py-0">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="#">
             <img style={{ width: "60px" }} src={logo} alt="logo" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -25,14 +26,14 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/">
                   Home<span className="sr-only">(current)</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Link
-                </a>
+                <Link className="nav-link" to="/add-article">
+                  Dodaj artykuł
+                </Link>
               </li>
             </ul>
           </div>
