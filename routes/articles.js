@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(400).json("Error: ${err}"));
 });
 
-//ADD = POST nowy artykół
+//ADD = POST nowy artykuł
 router.post("/add", (req, res) => {
   const newArticle = new Articles({
     title: req.body.title,
@@ -19,18 +19,18 @@ router.post("/add", (req, res) => {
 
   newArticle
     .save()
-    .then(() => res.json("Nowy artykół został opublikowany."))
+    .then(() => res.json("Nowy artykuł został opublikowany."))
     .catch((err) => res.status(400).json("Error: ${err}"));
 });
 
-// FIND - znajdź artykół po ID
+// FIND - znajdź artykuł po ID
 router.get("/:id", (req, res) => {
   Articles.findById(req.params.id)
     .then((article) => res.json(article))
     .catch((err) => res.status(400).json("Error: ${err}"));
 });
 
-//FIND - znajdź artykół po ID i UPDATE
+//FIND - znajdź artykuł po ID i UPDATE
 router.put("/update/:id", (req, res) => {
   Articles.findById(req.params.id)
     .then((article) => {
@@ -40,13 +40,13 @@ router.put("/update/:id", (req, res) => {
 
       article
         .save()
-        .then(() => res.json("Artykół został zmodyfikowany poprawnie"))
+        .then(() => res.json("Artykuł został zmodyfikowany poprawnie"))
         .catch((err) => res.sendStatus(400).json("Error: ${err}"));
     })
     .catch((err) => res.sendStatus(400).json("Error: ${err}"));
 });
 
-//FIND - znajdź artykół po ID i DELETE
+//FIND - znajdź artykuł po ID i DELETE
 router.delete("/:id", (req, res) => {
   Articles.findByIdAndDelete(req.params.id)
     .then(() => res.json("Artykuł został usunięty."))

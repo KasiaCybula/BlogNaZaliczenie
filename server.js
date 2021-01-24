@@ -24,4 +24,4 @@ const articleRouter = require("./routes/articles");
 
 app.use("/articles", articleRouter);
 
-app.listen(port, () => console.log("Aplikacja dziala na porcie: ${port}"));
+app.listen(port, () => console.log(`Aplikacja dziala na porcie: ${port}`));
